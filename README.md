@@ -1,5 +1,6 @@
 # 🚀 DevOps Docker Project
 
+![CI](https://github.com/saikumargoli2917-cloud/Devops-project/actions/workflows/ci.yml/badge.svg)
 ## 📌 Project Overview
 This project demonstrates a simple DevOps workflow by containerizing a static web application using Docker and deploying it with Nginx.
 
