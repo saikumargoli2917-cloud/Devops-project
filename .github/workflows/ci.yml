@@ -12,16 +12,29 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    # Docker Build
     - name: Build Docker Image
       run: docker build -t sai-app .
 
+    # Login to Docker Hub
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+    # Tag Image
+    - name: Tag Image
+      run: docker tag sai-app ${{ secrets.DOCKER_USERNAME }}/sai-devops-app
+
+    # Push Image
+    - name: Push to Docker Hub
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/sai-devops-app
+
+    # Deploy to Netlify
     - name: Deploy to Netlify
       uses: nwtgck/actions-netlify@v2
       with:
         publish-dir: ./
         production-branch: main
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        deploy-message: "Deploy from GitHub Actions"
       env:
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
