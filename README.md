@@ -1,21 +1,37 @@
-# 🚀 DevOps Docker Project
+# 🚀 DevOps CI/CD Pipeline with Docker & Kubernetes
 
-![CI](https://github.com/saikumargoli2917-cloud/Devops-project/actions/workflows/ci.yml/badge.svg)
 ## 📌 Project Overview
-This project demonstrates a simple DevOps workflow by containerizing a static web application using Docker and deploying it with Nginx.
+This project demonstrates a complete end-to-end DevOps workflow by containerizing a web application using Docker, automating CI/CD using GitHub Actions, pushing Docker images to Docker Hub, and deploying the application on a Kubernetes cluster.
 
-## 🛠️ Technologies Used
-- Docker
-- Nginx
-- HTML
+---
 
-## ⚙️ How It Works
-1. Created a static web page (index.html)
-2. Used Dockerfile to package the application
-3. Deployed using Nginx inside a container
+## 🧠 Architecture
+Code → GitHub → CI/CD → Docker → Docker Hub → Kubernetes → Live Application
 
-## 🚀 Run Locally
+---
 
+## ⚙️ Technologies Used
+- Docker (Containerization)
+- GitHub Actions (CI/CD Automation)
+- Docker Hub (Container Registry)
+- Kubernetes (Container Orchestration)
+- Netlify (Web Deployment)
+- HTML, Nginx
+
+---
+
+## 🧱 Features
+- Automated CI/CD pipeline triggered on code push
+- Docker image build and push to Docker Hub
+- Secure credential management using GitHub Secrets
+- Deployment to Kubernetes cluster using Deployment & Service
+- Local access using port-forwarding
+- Live deployment via Netlify
+
+---
+
+## 🐳 Docker Setup
+
+### Build Docker Image
 ```bash
 docker build -t sai-app .
-docker run -p 80:80 sai-app
