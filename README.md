@@ -1,6 +1,9 @@
 # 🚀 DevOps CI/CD Pipeline with Docker & Kubernetes
 
+![CI](https://github.com/saikumargoli2917-cloud/Devops-project/actions/workflows/ci.yml/badge.svg)
+
 ## 📌 Project Overview
+...
 This project demonstrates a complete end-to-end DevOps workflow by containerizing a web application using Docker, automating CI/CD using GitHub Actions, pushing Docker images to Docker Hub, and deploying the application on a Kubernetes cluster.
 
 ---
